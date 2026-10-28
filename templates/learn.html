@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Safety Guidelines | Password Safety Hub</title>
+    <meta name="description" content="Password Safety Guidelines: Follow these simple practices to protect your accounts and personal information.">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="page-container">
+        <section class="learn-section">
+            <div class="learn-card">
+                <header class="learn-header">
+                    <h1 class="learn-title">Password Safety Guidelines</h1>
+                    <p class="learn-intro">Follow these simple practices to protect your accounts and personal information.</p>
+                </header>
+
+                <ol class="guidelines-list">
+                    <li class="guideline-item">
+                        <h2 class="guideline-title">1. Use long passwords</h2>
+                        <p class="guideline-text">Choose a password that is at least 15 characters long when the service allows it. Longer passwords are generally harder to guess.</p>
+                    </li>
+
+                    <li class="guideline-item">
+                        <h2 class="guideline-title">2. Use unique passwords</h2>
+                        <p class="guideline-text">Never reuse the same password for multiple accounts. If one account is compromised, other accounts remain better protected.</p>
+                    </li>
+
+                    <li class="guideline-item">
+                        <h2 class="guideline-title">3. Prefer passphrases</h2>
+                        <p class="guideline-text">Consider a long, memorable combination of unrelated words, or use a password manager to generate and store unique passwords.</p>
+                    </li>
+
+                    <li class="guideline-item">
+                        <h2 class="guideline-title">4. Enable multi-factor authentication</h2>
+                        <p class="guideline-text">Turn on MFA or two-step verification whenever it is available.</p>
+                    </li>
+
+                    <li class="guideline-item">
+                        <h2 class="guideline-title">5. Avoid predictable information</h2>
+                        <p class="guideline-text">Do not use easily guessed details such as your name, birthday, common words, or predictable sequences.</p>
+                    </li>
+
+                    <li class="guideline-item">
+                        <h2 class="guideline-title">6. Stay alert for phishing</h2>
+                        <p class="guideline-text">Never enter your password through suspicious links. Check the website address before signing in.</p>
+                    </li>
+                </ol>
+
+                <div class="learn-actions">
+                    <a href="{{ url_for('home') }}" class="btn btn-primary">Back to Home</a>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

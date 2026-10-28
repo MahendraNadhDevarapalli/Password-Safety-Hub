@@ -1,0 +1,561 @@
+/* ==========================================================================
+   Password Safety Hub - Stylesheet
+   Minimalist, polished design with white/light background, navy blue headings,
+   blue primary buttons, and teal accents.
+   ========================================================================== */
+
+:root {
+    --bg-page: #f8fafc;
+    --bg-card: #ffffff;
+    --bg-input: #ffffff;
+    --bg-subtle: #f1f5f9;
+
+    /* Colors */
+    --color-navy: #0f2744;
+    --color-navy-dark: #0a192c;
+    --color-text-main: #334155;
+    --color-text-muted: #64748b;
+    --color-text-light: #94a3b8;
+    --color-border: #e2e8f0;
+    --color-border-focus: #2563eb;
+
+    /* Accents & Buttons */
+    --color-blue: #2563eb;
+    --color-blue-hover: #1d4ed8;
+    --color-teal: #0d9488;
+    --color-teal-light: #14b8a6;
+    --color-teal-bg: #ccfbf1;
+
+    /* Strength Levels */
+    --strength-weak: #ef4444;
+    --strength-fair: #f59e0b;
+    --strength-strong: #2563eb;
+    --strength-very-strong: #0d9488;
+
+    /* Typography */
+    --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --transition: 0.2s ease;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-page);
+    color: var(--color-text-main);
+    font-family: var(--font-family);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+/* Page Layout */
+.page-container {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Typography */
+h1, h2, h3 {
+    color: var(--color-navy);
+    line-height: 1.25;
+    font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   Buttons
+   -------------------------------------------------------------------------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.6rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: var(--font-family);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: background-color var(--transition), border-color var(--transition), transform var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--color-blue);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-blue-hover);
+    color: #ffffff;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--color-navy);
+    border-color: var(--color-border);
+}
+
+.btn-outline:hover {
+    background-color: var(--bg-subtle);
+    border-color: var(--color-text-muted);
+}
+
+.btn-secondary {
+    background-color: var(--bg-subtle);
+    color: var(--color-text-main);
+    border-color: var(--color-border);
+}
+
+.btn-secondary:hover {
+    background-color: #e2e8f0;
+}
+
+/* --------------------------------------------------------------------------
+   Home Hero Section (Two-Side Layout)
+   -------------------------------------------------------------------------- */
+.hero-section {
+    background-color: var(--bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 3rem 2.5rem;
+    box-shadow: 0 4px 20px rgba(15, 39, 68, 0.04);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+/* Left Side: Logo */
+.hero-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+}
+
+.site-logo {
+    max-width: 100%;
+    width: 400px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.site-logo.logo-hidden {
+    display: none;
+}
+
+/* Right Side: Information */
+.hero-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-title {
+    font-size: 2.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-navy);
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1.25rem;
+}
+
+/* Compact Feature Labels */
+.feature-labels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+}
+
+.feature-label {
+    background-color: var(--color-teal-bg);
+    color: var(--color-teal);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.3rem 0.85rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(13, 148, 136, 0.2);
+}
+
+/* Subtle Quotations */
+.hero-quotes {
+    margin-bottom: 1.75rem;
+    border-left: 3px solid var(--color-teal);
+    padding-left: 1rem;
+}
+
+.hero-quote {
+    font-size: 0.88rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.hero-quote:first-child {
+    margin-bottom: 0.35rem;
+}
+
+/* Two Main Buttons */
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* --------------------------------------------------------------------------
+   Test Your Password Section
+   -------------------------------------------------------------------------- */
+.tester-section {
+    width: 100%;
+}
+
+.tester-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    box-shadow: 0 4px 20px rgba(15, 39, 68, 0.04);
+}
+
+.tester-header {
+    margin-bottom: 1.75rem;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 1.25rem;
+}
+
+.tester-title {
+    font-size: 1.75rem;
+    margin-bottom: 0.35rem;
+}
+
+.tester-description {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-navy);
+    margin-bottom: 0.4rem;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-input {
+    width: 100%;
+    padding: 0.85rem 4.5rem 0.85rem 1rem;
+    font-size: 1rem;
+    font-family: var(--font-family);
+    color: var(--color-navy);
+    background-color: var(--bg-input);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    outline: none;
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.password-input:focus {
+    border-color: var(--color-border-focus);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.password-input::placeholder {
+    color: var(--color-text-light);
+}
+
+.toggle-btn {
+    position: absolute;
+    right: 0.75rem;
+    background: transparent;
+    border: none;
+    color: var(--color-blue);
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-family: var(--font-family);
+    cursor: pointer;
+    padding: 0.35rem 0.5rem;
+    border-radius: var(--radius-sm);
+    transition: background-color var(--transition);
+}
+
+.toggle-btn:hover {
+    background-color: var(--bg-subtle);
+}
+
+/* Strength Meter */
+.meter-wrapper {
+    background-color: var(--bg-subtle);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.meter-status-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.6rem;
+}
+
+.meter-caption {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-navy);
+}
+
+.strength-badge {
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.2rem 0.75rem;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.strength-badge.empty {
+    background-color: #e2e8f0;
+    color: var(--color-text-muted);
+}
+
+.strength-badge.weak {
+    background-color: #fee2e2;
+    color: var(--strength-weak);
+}
+
+.strength-badge.fair {
+    background-color: #fef3c7;
+    color: #b45309;
+}
+
+.strength-badge.strong {
+    background-color: #dbeafe;
+    color: var(--strength-strong);
+}
+
+.strength-badge.very-strong {
+    background-color: var(--color-teal-bg);
+    color: var(--strength-very-strong);
+}
+
+.meter-track {
+    width: 100%;
+    height: 8px;
+    background-color: #e2e8f0;
+    border-radius: 9999px;
+    overflow: hidden;
+    margin-bottom: 0.6rem;
+}
+
+.meter-bar-fill {
+    height: 100%;
+    width: 0%;
+    background-color: transparent;
+    border-radius: 9999px;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.strength-explanation {
+    font-size: 0.88rem;
+    color: var(--color-text-main);
+}
+
+/* Constructive Suggestions Box */
+.suggestions-box {
+    margin-bottom: 1.25rem;
+}
+
+.suggestion-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.86rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.4rem;
+}
+
+.suggestion-item::before {
+    content: "•";
+    color: var(--color-teal);
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.2;
+}
+
+/* Educational Notice */
+.tester-note {
+    font-size: 0.82rem;
+    color: var(--color-text-light);
+    margin-bottom: 1.75rem;
+    line-height: 1.45;
+}
+
+/* Actions */
+.tester-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   Learn Page
+   -------------------------------------------------------------------------- */
+.learn-section {
+    width: 100%;
+}
+
+.learn-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 3rem 2.5rem;
+    box-shadow: 0 4px 20px rgba(15, 39, 68, 0.04);
+}
+
+.learn-header {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 1.5rem;
+}
+
+.learn-title {
+    font-size: 2.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-navy);
+}
+
+.learn-intro {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+}
+
+.guidelines-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.guideline-item {
+    background-color: var(--bg-page);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 1.25rem 1.5rem;
+}
+
+.guideline-title {
+    font-size: 1.1rem;
+    color: var(--color-navy);
+    margin-bottom: 0.35rem;
+    font-weight: 700;
+}
+
+.guideline-text {
+    font-size: 0.95rem;
+    color: var(--color-text-main);
+    line-height: 1.55;
+}
+
+.learn-actions {
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    .hero-section,
+    .tester-card,
+    .learn-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .hero-left {
+        min-height: auto;
+    }
+
+    .site-logo {
+        width: 320px;
+        max-width: 100%;
+    }
+
+    .hero-title {
+        font-size: 1.85rem;
+    }
+
+    .feature-labels {
+        justify-content: center;
+    }
+
+    .hero-quotes {
+        border-left: none;
+        border-top: 2px solid var(--color-teal);
+        padding-left: 0;
+        padding-top: 0.75rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .tester-actions {
+        flex-direction: column;
+    }
+
+    .tester-actions .btn {
+        width: 100%;
+    }
+
+    .learn-title {
+        font-size: 1.75rem;
+    }
+}

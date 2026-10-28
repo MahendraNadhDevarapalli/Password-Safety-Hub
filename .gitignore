@@ -1,0 +1,5 @@
+static.zip
+templates.zip
+__pycache__/
+.venv/
+venv/
